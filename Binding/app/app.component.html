@@ -1,0 +1,20 @@
+<h1>{{titre}} </h1>
+
+<img src="{{image}}" width="{{width}}" height="{{height}}">
+<br>
+
+<a class="btn btn-default" href="#" (click)="onClick()">Cliquer sur le bouton</a>
+<br>
+<button class="btn btn-info" (click)="changerImage()">Cliquer pour changer d'image</button>
+<button class="btn btn-danger" (click)="changerTailleImage()">Cliquer pour changer la taille de l'image</button>
+<button class="btn btn-warning" (click)="afficherDate()">Afficher la date</button>
+<br>
+<p class="blue">{{texte}} </p>
+<button class="btn btn-info" (click)="changerTexte()">Cliquer pour changer le texte</button>
+<br>
+<p class="black">{{nombre}} </p>
+<button class="btn btn-success" (click)="incrementerNombre()">+</button>
+<button class="btn btn-danger" (click)="desincrementerNombre()">-</button>
+<br>
+<img [src]="picture" width="{{width}}" height="{{height}}" alt="">
+<button class="btn btn-success" (click)="defilerImage()">Carousel d'images</button>
