@@ -1,0 +1,22 @@
+h1.titre {
+    color: indigo;
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+h2.tache {
+    color: red;
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p.texte {
+    color: blue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul li.blue {
+    color: blue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

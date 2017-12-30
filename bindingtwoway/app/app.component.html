@@ -1,0 +1,19 @@
+<h1 class="titre">{{titre}} </h1>
+
+<h2 class="tache">Liste des Taches à réaliser</h2>
+<div>
+    <form>
+        <input type="text" [(ngModel)]="texte" name="texte" id="">
+        <input class="btn btn-success" type="submit" value="ajouter" (click)="ajoutertache(texte)">
+    </form>
+</div>
+
+<div>
+    <p class="texte">{{texte}} </p>
+</div>
+<br>
+<div>
+    <ul class="blue" *ngFor="let tache of taches let i=index">
+        <li (click)="tacherealise(i)" class="blue">{{tache.texte}} </li>
+    </ul>
+</div>
