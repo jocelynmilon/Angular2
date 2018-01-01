@@ -1,0 +1,12 @@
+<h1 class="titre">{{titre}} </h1>
+
+<h2 class="langue">Les langues parlées dans le vestiaire du PSG</h2>
+
+<p class="paragraphe">J'apprend les langues suivantes :</p>
+
+<ul class="liste" *ngFor="let langage of langages let i=index">
+
+    <li class="liste" (click)="surLigner(i)" [style.background-color]="langage.interesse ? 'LightPink' : 'transparent' ">{{langage.langue}} </li>
+</ul>
+
+<p class="paragraphe">Clique sur les langues que tu souhaites apprendre</p>
