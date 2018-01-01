@@ -1,0 +1,19 @@
+h1.titre {
+    color: red;
+    font-family: cursive;
+}
+
+h2.tache {
+    color: blue;
+    font-family: cursive;
+}
+
+ul li {
+    cursor: pointer;
+    color: dodgerblue;
+}
+
+.fait {
+    text-decoration: line-through;
+    color: #ccc;
+}

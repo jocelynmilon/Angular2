@@ -14,13 +14,6 @@ export class AppComponent {
        { texte: 'investir chez les jeunes joueur', fait: false },
        { texte: 'acheter des stars', fait: false },     
      ];
-
-
-
-
-
-
-
    ajoutertache(nouvelleTache:string) {
        this.taches.push(nouvelleTache)
        this.texte = "";
