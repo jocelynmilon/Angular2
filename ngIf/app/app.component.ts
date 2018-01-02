@@ -1,7 +1,40 @@
 import { Component } from '@angular/core';
 
+
+const LANGAGES: string[] = [
+    'francais',
+    'espagnole',
+    'brésilien',
+    'argentin',
+    'allemand',
+
+
+]
+
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    templateUrl: 'app/app.component.html',
+    styleUrls: ['app/app.component.css']
 })
-export class AppComponent { }
+export class AppComponent { 
+
+    titre:string = "NgIf";
+
+    langages = LANGAGES;
+
+    apprendreLaLangue(index:number) {
+
+    }
+
+    nePasApprendreLaLangue(index:number) {
+
+    }
+
+
+
+
+
+
+
+
+}
