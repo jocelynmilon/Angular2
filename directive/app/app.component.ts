@@ -21,20 +21,45 @@ const LANGAGES : Langage[] = [
     templateUrl: 'app/app.component.html',
     styleUrls: ['app/app.component.css']
 })
+
 export class AppComponent {
 
     titre:string = 'directive';
+    texteBouton: string = 'cacher le texte';
+    visible:boolean = true;
 
     langages = LANGAGES;
 
-    surLigner(index:number) {
-       
-        this.langages[index].interesse = (this.langages[index].interesse == false ? this.langages[index].interesse = true : this.langages[index].interesse = false)
-        
-        
+    setStyles(langage: Langage) {
+
+        let styles = {
+            'color': langage.interesse ? 'red' : 'blue',
+            'background-color': langage.interesse ? 'blue' : 'transparent'
+        };
+        return styles;
+    }
+
+    surLigner(index: number) {
+
+        let langage = this.langages[index];
+        langage.interesse = true;
+    }
+    
+    pasSurLigner(index:number) {
+        let langage = this.langages[index];
+        langage.interesse = false;
+
+    }  
+
+    cacherTexte() {
+        if(this.visible == true) {
+            this.visible = false
+            this.texteBouton = "afficher le texte"
+        } else {
+            this.visible = true
+            this.texteBouton = "cacher le texte"
+        }
     }
         
-        
-      
-    ];
+
  }

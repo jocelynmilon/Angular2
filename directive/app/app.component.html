@@ -4,9 +4,25 @@
 
 <p class="paragraphe">J'apprend les langues suivantes :</p>
 
-<ul class="liste" *ngFor="let langage of langages let i=index">
 
-    <li class="liste" (click)="surLigner(i)" [style.background-color]="langage.interesse ? 'LightPink' : 'transparent' ">{{langage.langue}} </li>
-</ul>
+
+<table class="table table-bordered" style="width:20%" border=1>
+    <tr *ngFor="let langage of langages let i=index">
+        <td>{{i + 1}} </td>
+        <td [ngStyle]="setStyles(langage)">{{langage.langue}}</td>
+        <td><span (click)="surLigner(i)" style="text-align:center">✅</span></td>
+        <td><span (click)="pasSurLigner(i)" style="text-align:center">❌</span></td>
+
+    </tr>
+
+</table>
+
 
 <p class="paragraphe">Clique sur les langues que tu souhaites apprendre</p>
+
+<h2 class="langue">Les nationalitées du PSG</h2>
+<p class="paragraphe" *ngIf="visible">C'est l'Inter de Paris! Avec onze nationalités, staff compris (l'adjoint Paul Clement est anglais), le PSG s'internationalise chaque jour davantage. Aujourd'hui, on compte dix joueurs d'origine étrangère à Paris. Mais ce n'est pas un record : lors de
+    la saison 2001-2002 et la suivante, le PSG a compté jusqu'à 16 joueurs originaires de pays différents.</p>
+<p class="paragraphe" *ngIf="!visible">&nbsp;</p>
+
+<button class="btn btn-info btn-lg" (click)="cacherTexte() ">{{texteBouton}} </button>
