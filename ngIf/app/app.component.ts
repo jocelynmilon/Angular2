@@ -22,6 +22,7 @@ export class AppComponent {
 
     langages = LANGAGES;
     langagesSelectionnes:string [] = [];
+    nombre:number
 
     apprendreLaLangue(index:number) {
         let langage :string = this.langages[index];
@@ -34,6 +35,10 @@ export class AppComponent {
         let langage: string = this.langagesSelectionnes[index];
         this.langages.push(langage)
         this.langagesSelectionnes.splice(index, 1)
+    }
+    retournerCompte() {
+        this.nombre = this.langagesSelectionnes.length;
+        return this.nombre;
     }
 
 

@@ -1,0 +1,24 @@
+<h1 class="titre">{{titre}} </h1>
+
+<div>
+    <input type="text" placeholder="maillot" [(ngModel)]="nouveau" name="nouveau" class="input-sm">
+    <input type="submit " value="ajouter " class="btn btn-success" (click)="ajouterLangage(nouveau) ">
+</div>
+
+<br>
+<table class="table table-bordered " style="width:60% " border=1>
+
+    <tr *ngFor="let maillot of maillots let i=index ">
+        <td width="20 ">{{i+1}}</td>
+        <td (click)="archiver(i)" [ngStyle]="setStyles(maillots)">{{maillot.nom | uppercase}}</td>
+        <td><span (click)="marquerImportant(i)" style="text-align: center">✅</span></td>
+        <td><span (click)="marquerPasImportant(i)" style="text-align:center ">❌</span></td>
+
+        <td>{{maillot.date}}</td>
+
+    </tr>
+
+
+
+
+</table>

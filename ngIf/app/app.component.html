@@ -28,7 +28,7 @@
                         <li class="langage" (click)="nePasApprendreLaLangue(i) ">{{apprendre}} </li>
                     </ul>
 
-                    <ul>
+                    <ul class="langage" *ngIf="retournerCompte() == 0">
                         <li>la liste est vide</li>
                     </ul>
                 </div>
