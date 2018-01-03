@@ -3,3 +3,12 @@ h1.titre {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
+
+h4.soustitre {
+    color: red;
+    text-align: center;
+}
+
+ul li.langage {
+    color: blue;
+}

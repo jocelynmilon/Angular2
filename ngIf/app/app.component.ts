@@ -21,13 +21,19 @@ export class AppComponent {
     titre:string = "NgIf";
 
     langages = LANGAGES;
+    langagesSelectionnes:string [] = [];
 
     apprendreLaLangue(index:number) {
-
+        let langage :string = this.langages[index];
+        this.langagesSelectionnes.push(langage)
+        this.langages.splice(index, 1)
+        console.log(langage)
     }
 
     nePasApprendreLaLangue(index:number) {
-
+        let langage: string = this.langagesSelectionnes[index];
+        this.langages.push(langage)
+        this.langagesSelectionnes.splice(index, 1)
     }
 
 

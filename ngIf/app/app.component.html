@@ -6,6 +6,34 @@
 
     <div class="row">
 
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="soustitre">Langues à apprendre</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="langage" *ngFor="let langage of langages let i=index">
+                        <li class="langage" (click)="apprendreLaLangue(i)">{{langage}} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="soustitre">je veux apprendre</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="langage" *ngFor="let apprendre of langagesSelectionnes let i=index">
+                        <li class="langage" (click)="nePasApprendreLaLangue(i) ">{{apprendre}} </li>
+                    </ul>
+
+                    <ul>
+                        <li>la liste est vide</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
 
 
