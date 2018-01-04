@@ -10,7 +10,7 @@
 
     <tr *ngFor="let maillot of maillots let i=index ">
         <td>{{i + 1}}</td>
-        <td [ngStyle]="setStyles(maillot)">{{maillot.nom }}</td>
+        <td [ngStyle]="setStyles(maillot)">{{maillot.nom | uppercase}}</td>
         <td><span (click)="marquerImportant(i)" style="text-align: center">✅</span></td>
         <td><span (click)="marquerPasImportant(i)" style="text-align:center ">❌</span></td>
 

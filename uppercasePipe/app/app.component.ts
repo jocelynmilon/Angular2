@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 class Maillot {
-    id:number;
+    id: number;
     nom: string;
-    date:Date;
-    interested:boolean;
+    date: Date;
+    interested: boolean;
 }
 
 const MAILLOTS: Maillot[] = [
@@ -26,27 +26,27 @@ const MAILLOTS: Maillot[] = [
     styleUrls: ['app/app.component.css']
 })
 export class AppComponent {
-   
-    titre:string = 'DatePipe';
-    maillots = MAILLOTS;
-    input:string;
 
-    setStyles(maillot:Maillot) {
-       
-             let styles = {
-            'color' : maillot.interested ? '#000' : 'blue',
+    titre: string = 'Uppercase Pipe';
+    maillots = MAILLOTS;
+    input: string;
+
+    setStyles(maillot: Maillot) {
+
+        let styles = {
+            'color': maillot.interested ? '#000' : 'blue',
             'background-color': maillot.interested ? 'yellow' : 'transparent'
-    };
-    return styles;
+        };
+        return styles;
 
     }
 
-    ajouterLangage(texte:string) {
+    ajouterLangage(texte: string) {
         let nouveau = { id: this.maillots.length + 1, nom: texte, date: new Date(), interested: false }
         this.maillots.push(nouveau)
     }
 
-    marquerImportant(index:number) {
+    marquerImportant(index: number) {
         let maillot = this.maillots[index];
         maillot.interested = true;
     }
