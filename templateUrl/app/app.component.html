@@ -9,12 +9,12 @@
 
     <br>
     <formulaire-todo></formulaire-todo>
-
+    <br>
     <!-- liste todo -->
     <div class="row">
         <div class="col-md-8">
-            <table class="table table-bordered table-hover">
-                <tr *ngFor="let todo of todos">
+            <table class="table table-bordered ">
+                <tr *ngFor="let todo of todos" [ngClass]="setClasses(todo)" (click)="onSelect(todo) ">
                     <td width="55%">{{todo.texte | uppercase}} </td>
                     <td width="25%">{{todo.date | date: "dd - MM - y"}} </td>
                     <td width="25%">{{todo.priority}} </td>
@@ -22,6 +22,25 @@
                 </tr>
 
             </table>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="todoSelectionne">
+        <div class="col-md-8">
+            <div class="well">
+                <div *ngIf="!edit">
+                    <h2>{{todoSelectionne.texte}} </h2>
+                    <p> <label>priorité :</label>{{todoSelectionne.priority}} </p>
+                    <p>{{todoSelectionne.desc}} </p>
+
+
+                </div>
+                <div *ngIf="edit">
+                    <p>Modifier le todo</p>
+                </div>
+                <p><a href="#" class="btn btn-info btn-lg" (click)="modifierTodo(edit)">Modifier</a></p>
+            </div>
+
         </div>
     </div>
 

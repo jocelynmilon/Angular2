@@ -8,19 +8,21 @@
             <div class="col-md-5">
                 <input type="date" class="form-control input-sm" [(ngModel)]="todoDate" name="todoDate">
             </div>
-            <div class="col-md-12">
-
+            <div class="col-md-2">
+                <select class="form-control input-sm" [(ngModel)]="priority" required>
+                    <option *ngFor="let p of priorities" [value]="p">{{p}}</option>
+                </select>
             </div>
 
         </div>
         <div class="row">
             <div class="col-md-12">
-                <textarea class="form-control input-sm" rows="3" [(ngModel)]="todoDesc"></textarea>
+                <textarea class="form-control input-sm" rows="3" [(ngModel)]="todoDesc" placeholder="description"></textarea>
             </div>
 
         </div>
         <br>
-        <button class="btn btn-success btn-lg" (click)="ajouterTodo(nouveauTodo, todoDesc, todoDate, 'faible')">Ajouter</button>
+        <button class="btn btn-info btn-lg" (click)="ajouterTodo(nouveauTodo, todoDesc, todoDate, priority)">Ajouter</button>
 
     </div>
 
