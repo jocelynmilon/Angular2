@@ -1,0 +1,28 @@
+<h1 class="titre">
+    <h1>{{titre}} </h1>
+</h1>
+
+<div class="container">
+    <h1>Todo Liste - Mes transferes à réaliser</h1>
+    <!--  formulaire ajouter -->
+
+
+    <br>
+    <formulaire-todo></formulaire-todo>
+
+    <!-- liste todo -->
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-bordered table-hover">
+                <tr *ngFor="let todo of todos">
+                    <td width="55%">{{todo.texte | uppercase}} </td>
+                    <td width="25%">{{todo.date | date: "dd - MM - y"}} </td>
+                    <td width="25%">{{todo.priority}} </td>
+                    <td width="2%"><span class="label-danger">X</span></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+</div>

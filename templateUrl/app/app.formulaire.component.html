@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-5">
+                <input type="text" placeholder="todo....." class="form-control input-sm" [(ngModel)]="nouveauTodo" name="nouveauTodo"><br>
+
+            </div>
+            <div class="col-md-5">
+                <input type="date" class="form-control input-sm" [(ngModel)]="todoDate" name="todoDate">
+            </div>
+            <div class="col-md-12">
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <textarea class="form-control input-sm" rows="3" [(ngModel)]="todoDesc"></textarea>
+            </div>
+
+        </div>
+        <br>
+        <button class="btn btn-success btn-lg" (click)="ajouterTodo(nouveauTodo, todoDesc, todoDate, 'faible')">Ajouter</button>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+
+<h1>Todo Liste - Mon Gestionnaire de Tâches</h1>
+
+<!--  Formulaire - ajouter todo -->
+<formulaire-todo></formulaire-todo>
+
+<br>
+
+<!--  Liste todos -->
+<div class="row">
+        <div class="col-md-8">
+        <table  class="table table-bordered">
+
+            <tr *ngFor="let todo of todos let i=index" [ngClass]="setClasses(todo)" [class.fait]="todo.estFait == true">
+                <td width="55%" (click)="onSelect(todo)">{{todo.texte | uppercase}}</td>
+                <td width="25%">{{todo.date | date: "dd - MM - y"}}</td>
+                <td width="25%">{{todo.priority}}</td>  
+                <td width="2%"><span class="label label-success" (click)="marquerTodoFait(i)">&#10004;</span></td>   
+                <td width="2%"><span class="label label-danger" (click)="supprimerTodo(i)"> X</span></td>
+            </tr>
+
+        </table>  
+        </div>
+
+</div><!-- row -->
+
+<!-- affichage détails Todo-->
+<todo-details [todo]="todoSelectionne"></todo-details>
+
+
+</div><!-- container --> 
