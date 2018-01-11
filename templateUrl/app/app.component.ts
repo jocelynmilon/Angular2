@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AppFormulaireComponent } from './app.formulaire.component'
+import { AppFormulaireComponent } from './app.formulaire.component';
+import {AppTodoDetailsComponent } from './app.todo-details.component';
 import { Todo } from './todo';
 import { TODOS } from './todos';
 
@@ -8,15 +9,17 @@ import { TODOS } from './todos';
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
     styleUrls:['app/app.component.css'],
-    directives: [AppFormulaireComponent]
+    directives: [AppFormulaireComponent, AppTodoDetailsComponent]
 })
 export class AppComponent { 
    
     titre:string ="templateUrl";
-    
     todos = TODOS;
     todoSelectionne: Todo;
-    edit:boolean = false;
+    texteBouton: string = "modifier";
+   
+    
+    
 
     setClasses(todo: Todo) {
         let classes = {
@@ -32,12 +35,9 @@ export class AppComponent {
         console.log(todo)
 
     }
-    modifierTodo(bool:boolean) {
-        if(bool) {
-            this.edit = false;
-        }else {
-            this.edit = true;
-        }
-
+   
+    marquerTodoFait(index: number) {
+             
+        this.todos [index].estFait = (this.todos[index].estFait == false ? true : false)
     }
 }

@@ -12,6 +12,7 @@ export class AppFormulaireComponent {
 
     todos = TODOS;
     priorities:string[] = ['faible','moyenne', 'haute'];
+    priority = 'faible' //valeur faible par défaut
 
 
     ajouterTodo(texte: string, desc: string, date: Date, priority: string) {
