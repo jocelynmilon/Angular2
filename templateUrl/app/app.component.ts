@@ -18,6 +18,7 @@ export class AppComponent {
     todoSelectionne: Todo;
     texteBouton: string = "modifier";
    
+   
     
     
 
@@ -39,5 +40,10 @@ export class AppComponent {
     marquerTodoFait(index: number) {
              
         this.todos [index].estFait = (this.todos[index].estFait == false ? true : false)
+    }
+    supprimerTodo(index: number) {
+
+        this.todos.splice(index, 1)
+        
     }
 }

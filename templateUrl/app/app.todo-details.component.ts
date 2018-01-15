@@ -15,7 +15,7 @@ export class AppTodoDetailsComponent {
 
     @Input()
     todo: Todo;
-    
+    texteBouton:string = "modifier";
     priorities: string[] = ['faible', 'moyenne', 'haute'];
     edit: boolean = false;
 

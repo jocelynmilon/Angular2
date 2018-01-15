@@ -4,28 +4,33 @@
 
 <div class="container">
     <h1>Todo Liste - Mes transferes à réaliser</h1>
-    <!--  formulaire ajouter -->
+
 
 
     <br>
+    <!-- formulaire ajouter todo -->
     <formulaire-todo></formulaire-todo>
     <br>
     <!-- liste todo -->
     <div class="row">
+        <!-- debut row -->
         <div class="col-md-8">
             <table class="table table-bordered ">
-                <tr *ngFor="let todo of todos let i = index" [ngClass]="setClasses(todo)" [class.fait]="todo.estFait == true">
-                    <td width="55%">{{todo.texte | uppercase}} </td>
+                <tr *ngFor="let todo of todos let i=index " [ngClass]="setClasses(todo)" [class.fait]="todo.estFait == true">
+                    <td width="55%" (click)="onSelect(todo)">{{todo.texte | uppercase}} </td>
                     <td width="25%">{{todo.date | date: "dd - MM - y"}} </td>
                     <td width="25%">{{todo.priority}} </td>
-                    <td width="2%"><span class="label-success" (click)="marquerTodoFait(i) ">&#10004;</span></td>
-                    <td width="2%"><span class="label-danger">X</span></td>
+                    <td width="2%"><span class="label label-success" (click)="marquerTodoFait(i)">&#10004;</span></td>
+                    <td width="2%"><span class="label label-danger" (click)="supprimerTodo(i)">X</span></td>
                 </tr>
 
             </table>
         </div>
     </div>
-    <todo-details [todo]="todoSelectionne"></todo-details>
+    <!-- fin de row -->
+    <!-- affichage details todo-->
+    <todo-details [todo]=" todoSelectionne "></todo-details>
 
 
 </div>
+<!-- fin de container -->
