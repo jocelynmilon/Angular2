@@ -1,0 +1,10 @@
+h1.titre {
+    color: sienna;
+    font-family: Courier New, Courier, monospace;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.col-md-6.well {
+    background-color: grey;
+}

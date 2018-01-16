@@ -1,0 +1,51 @@
+<div class="container">
+
+
+    <div>
+        <h1 class="titre">{{titre}} </h1>
+    </div>
+
+    <h2 class="soustitre">Répertoire Clients</h2>
+
+
+    <!-- Navigation -->
+    <div class="row">
+
+    </div>
+    <br>
+
+
+    <!-- formulaire -->
+    <formulaire></formulaire>
+    <!-- fin de row -->
+
+
+    <br>
+
+    <!-- liste Clients -->
+    <div class="row">
+        <div class="col-md-6">
+            <hr>
+            <p><label for="Liste Clients"></label></p>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let client of clients">
+                    <td>{{client.nom}} </td>
+                    <td>{{client.prenom}}</td>
+                    <td>{{client.email}}</td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+    <!-- fin de row -->
+
+</div>
