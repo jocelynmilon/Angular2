@@ -2,14 +2,19 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {FormulaireComponent } from './formulaire.component';
 import { DetailClientsComponent } from './detail-clients.component';
+import { ClientsComponent } from './clients.component';
 
 
 const appRoutes: Routes = [
 
     {
         path: '',
-        redirectTo: 'accueil',
+        redirectTo: 'Accueil',
         pathMatch: 'full'
+    },
+    {
+        path: 'Accueil',
+        component: ClientsComponent
     },
 
     {
@@ -18,7 +23,7 @@ const appRoutes: Routes = [
     },
 
     {
-        path: 'detail/',
+        path: 'details/:id',
         component: DetailClientsComponent
     }
 ]

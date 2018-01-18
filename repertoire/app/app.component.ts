@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { CLIENTS } from './clients';
-import { Client } from './client';
+
 
 @Component({
     selector: 'my-app',
@@ -10,7 +9,6 @@ import { Client } from './client';
 export class AppComponent {
 
     titre: string ="Mon répertoire";
-    clients = CLIENTS;
-    client = Client
+    
     
  }

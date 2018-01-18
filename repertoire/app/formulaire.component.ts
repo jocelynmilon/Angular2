@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CLIENTS } from './clients';
 import { Client } from './client';
+import { ClientService } from './client.service'
 
 
 
@@ -14,12 +16,18 @@ export class FormulaireComponent {
 
     clients = CLIENTS;
     client = Client
+    errorBox: any;
+
+    constructor(
+
+        private router: Router,
+        private clientService: ClientService
+    ) {}
 
     ajouterClient(nom: string, prenom: string, email: string) {
-
-        let nouveauClient = new Client(nom, prenom, email, false);
-        this.clients.push(nouveauClient);
-        //code
+        this.clientService.ajouterAListeClients(nom, prenom, email);
+        this.router.navigate(['/Accueil']);
+       
     }
 
 

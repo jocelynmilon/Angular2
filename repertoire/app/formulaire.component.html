@@ -1,19 +1,23 @@
 <div class="row">
+    <h1><label for="">Ajouter client :</label></h1>
 
     <div class="col-md-6" well>
-        <p><label for="">Ajouter client :</label></p>
 
-        <form action="">
+
+        <form>
             <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="nom" [(ngModel)]="texteNom" name="texteNom" required>
+                <input type="text" class="form-control" placeholder="nom" [(ngModel)]="texteNom" name="texteNom" required>
+            </div>
+            <div class="alert alert-danger" *ngIf=(nom)>
+                Ajouter Nom
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="prenom" [(ngModel)]="textePrenom" name="textePrenom" required>
+                <input type="text" class="form-control" placeholder="prenom" [(ngModel)]="textePrenom" name="textePrenom" required>
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" id="exampleInputEmail" placeholder="email" [(ngModel)]="texteEmail" name="texteEmail" required>
+                <input type="email" class="form-control" placeholder="email" [(ngModel)]="texteEmail" name="texteEmail" required>
             </div>
-            <button type="submit" class="btn btn-default pull-right" (click)="ajouterClient(texteNom, textePrenom, texteEmail)">Sauvegarder</button>
+            <button type="submit" class="btn btn-default pull-right" (click)="ajouterClient(texteNom, textePrenom, texteEmail)" [disabled]="!textePrenom || !texteEmail">Sauvegarder</button>
         </form>
     </div>
 </div>

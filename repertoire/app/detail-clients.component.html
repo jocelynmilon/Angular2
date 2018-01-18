@@ -4,27 +4,32 @@
 
 
         <!-- afficher details clients -->
-        <div>
+        <div *ngIf="!edit">
 
-            <h2>détails : nom , prénom</h2>
-            <P>Email</P>
-
-        </div>
+            <h2>détails : </h2>
+            <ul>
+                <li>{{client.nom |uppercase}}, {{client.prenom}}</li>
+                <li>{{client.email}}</li>
+            </ul>
+        </div> <br>
 
         <!-- modifier détails clients -->
 
-        <div>
+        <div *ngIf="edit">
             <span id="helpBlock" class="help-block">Modifier nom</span>
-            <input type="text" class="form-control" placeholder="Nom client">
+            <input type="text" class="form-control" placeholder="Nom client" [(ngModel)]="client.nom" name="client.nom">
 
             <span id="helpBlock" class="help-block">Modifier prenom</span>
-            <input type="text" class="form-control" placeholder="Prenom client">
+            <input type="text" class="form-control" placeholder="Prenom client" [(ngModel)]="client.prenom" name="client.prenom">
 
             <span id="helpBlock" class="help-block">Modifier email</span>
-            <input type="text" class="form-control" placeholder="Email client">
+            <input type="text" class="form-control" placeholder="Email client" [(ngModel)]="client.email" name="client.email">
         </div>
+        <br>
+        <a href="#" class="btn btn-default pull-right" (click)="modifierClient()"><span class="glyphicon glyphicon-pencil"></span> {{texteBouton}}</a>
+        <a href="#" class="btn btn-default " (click)="supprimerClient(client.id)"><span class="glyphicon glyphicon-trash"></span> supprimer</a>
     </div>
 
-    <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span>Modifier</a>
+
 </div>
 <!--fin de row -->
